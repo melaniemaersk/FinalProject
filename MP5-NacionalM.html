@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>Javascript Login Form</title>
+<link rel="stylesheet" href="MP5-NacionalM.css"/>
+<script>
+var attempt = 3;
+
+function validate(){
+	var username = document.getElementById("username").value;
+	var password = document.getElementById("password").value;
+	if ( username == "Melanie" && password == "Nacional"){
+		alert ("Login successfully!");
+		return false;
+	} else {
+		attempt --;
+		alert("You have left "+attempt+" attempt;");
+		if( attempt == 0){
+			document.getElementById("username").disabled = true;
+			document.getElementById("password").disabled = true;
+			document.getElementById("submit").disabled = true;
+			return false;
+		}
+	}
+}
+</script>
+</head>
+<body>
+	<div class="container">
+		<div class="main">
+			<h2>Login Form</h2>
+			<form id="form_id" method="post" name="myform">
+				
+				<input type="text" name="username" id="username" placeholder="Username" />
+				
+				<input type="password" name="password" id="password" placeholder="Password" />
+
+				<input type="button" value="Login" id="submit" onclick="validate()"/>
+				<input type="reset" value="Clear" id="reset" />
+				<input type="button" value="Exit" id="exit" onclick="self.close()" />
+				<br> For this demo use the following username and password:
+				<p>Username - Melanie</p>
+				<p>Password - Nacional</p>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

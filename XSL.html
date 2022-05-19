@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<xsl:stylesheet version="1.0" 
+
+	xmlns:xsl = "http://www.w3.org/1999/XSL/Transform"
+
+	xmlns = "http://www.w3.org/1999/xhtml">
+
+	<xsl:template match="cars">
+
+		<html xsl:version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+		<body style="font-family:Arial;font-size:12pt;background-color:#EEEEEE">
+
+		<h1>Car Details</h1>
+
+			<table border="1" cellpadding="10">
+
+			<tr bgcolor="#9acd32">
+
+				<th>Company Name</th>
+
+				<th>Model Name</th>
+
+				<th>Engine</th>
+
+				<th>Mileage</th>
+
+			</tr>
+
+			<xsl:for-each select="car">
+
+				<tr>
+
+					<td><xsl:value-of select="company" />Ford</td>
+
+					<td><xsl:value-of select="model" />Everest</td>
+
+					<td><xsl:value-of select="engine" />1000cc</td>
+
+					<td><xsl:value-of select="mileage" />15 km</td>
+
+				</tr>
+                  		
+				<tr>
+					
+					<td><xsl:value-of select="company" />Toyota</td>
+
+					<td><xsl:value-of select="model" />Camry</td>
+
+					<td><xsl:value-of select="engine" />1000cc</td>
+
+					<td><xsl:value-of select="mileage" />12 km</td>
+
+				</tr>
+
+			</xsl:for-each>
+
+			</table>
+
+		</body>
+
+		</html>
+
+	</xsl:template>
+
+</xsl:stylesheet>
